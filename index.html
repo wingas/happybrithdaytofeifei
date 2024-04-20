@@ -10,24 +10,35 @@
         #fullpage .section{
             background-repeat:no-repeat;
             background-size:cover;
+            background-blend-mode: multiply;
         }
         #fullpage .section:nth-child(1){
             background-image: url(./img/1.jpg);
+            background-color:#8000804d;
         }
         #fullpage .section:nth-child(2){
             background-image: url(./img/6.png);
+            background-color:#80000726;
         }
         #fullpage .section:nth-child(3){
             background-image: url(./img/2.jpg);
+            background-color:#8000660d;
         }
         #fullpage .section:nth-child(4){
             background-image: url(./img/4.jpg);
+/*            background-color:#8000804d;*/
         }
         #fullpage .section:nth-child(5){
             background-image: url(./img/5.jpg);
+/*            background-color:#8000804d;*/
         }
         #fullpage .section:nth-child(6){
             background-image: url(./img/7.jpg);
+            background-color:#80007717;
+        }
+        #fullpage .section:nth-child(7){
+            background-image: url(./img/8.jpg);
+/*            background-color:#80007717;*/
         }
         #headout{
             //
@@ -37,6 +48,26 @@
         }
         .headtext{
             text-shadow: 2px 2px 4px #000000;
+        }
+        .telltxt{
+            font-size: 8rem;
+        }
+        .telltxt2{
+            font-size: 4rem;
+        }
+        #fullpage .section:nth-child(5) .telltxt{
+            font-size: 15rem;
+        }
+        #fullpage .section:nth-child(6) h2{
+            font-size: 3rem;
+            margin: 20px;
+/*            text-shadow: 1px 2px 1px #000000;*/
+            color: #fff;
+            text-shadow:
+                -1px -1px 0 #6c0f97,
+/*                1px -1px 0 #6c0f97,*/
+/*                -1px 1px 0 #6c0f97,*/
+                1px 1px 0 #6c0f97;
         }
     </style>
 </head>
@@ -52,11 +83,34 @@
                 <audio id="audioPlayer" src="video/天气之子幻.mp3"></audio>
             </div>
         </div>
-        <div class="section"><h1>祝</h1></div>
-        <div class="section">你</div>
-        <div class="section">生日</div>
-        <div class="section">快乐！</div>
-        <div class="section">蛋糕</div>
+        <div class="section"><h1 class="telltxt text-center text-light">祝</h1></div>
+        <div class="section"><h1 class="telltxt text-center text-light">你</h1></div>
+        <div class="section"><h1 class="telltxt text-center text-light">生日</h1></div>
+        <div class="section"><h1 class="telltxt text-center text-warning font-weight-bold">快乐!!!</h1></div>
+        <div class="section">
+            <h2 class="text-center text-light">很高兴</h2>
+            <h2 class="text-center text-light">见证了你的成长</h2>
+            <h2 class="text-center text-info">篮球冠军</h2>
+            <h2 class="text-center text-info">三好学生标兵</h2>
+            <h2 class="text-center text-info">论文作者</h2>
+            <h2 class="text-center text-info">100+小时的一星志愿者</h2>
+            <h2 class="text-center text-info">党员同志</h2>
+            <h2 class="text-center text-light">好多好多的身份荣誉</h2>
+            <h2 class="text-center text-light">不高傲，不急躁</h2>
+            <h2 class="text-center text-light">脚踏实地地把想要的东西争取来</h2>
+            <h2 class="text-center text-light">我很看好你</h2>
+            <h2 class="text-center text-light">啊哈哈哈哈</h2>
+            <h2 class="text-center text-light">恭喜你成功上岸了</h2>
+            <h2 class="text-center text-light">你以后还有创造更多的辉煌</h2>
+            <h2 class="text-center text-light">好好加油噢！！</h2>
+            <h2 class="text-center text-success">自是桃李树，何畏不成蹊！</h2>
+            <h2 class="text-center text-warning">祝你生日快乐，不止生日！</h2>
+            <h2 class="text-center text-warning">祝你心想事成，不止今日！    </h2>      
+        </div>
+        <div class="section">
+            <h1 class="telltxt2 text-center text-light">时人怎识凌云木</h1>
+            <h1 class="telltxt2 text-center text-light">直待凌云始道高~</h1>
+        </div>
     </div>
     <script>
         $(function() {
