@@ -176,9 +176,12 @@
                     // $(this).text('播放音乐'); // 更新按钮文本
                 }
             });
-            $('.section').click(function(){
+            $('#fullpage .section:nth-child(n+1):nth-child(-n+8)').click(function(){
                 $.fn.fullpage.moveSectionDown();
-            })
+            });
+            $('#fullpage .section:nth-child(9)').click(function(){
+                $.fn.fullpage.silentMoveTo(1,1);
+            });
         });
 
         function checkMusicStatus() {
