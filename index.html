@@ -15,10 +15,10 @@
             background-image: url(./img/1.jpg);
         }
         #fullpage .section:nth-child(2){
-            background-image: url(./img/2.jpg);
+            background-image: url(./img/6.png);
         }
         #fullpage .section:nth-child(3){
-            background-image: url(./img/3.jpg);
+            background-image: url(./img/2.jpg);
         }
         #fullpage .section:nth-child(4){
             background-image: url(./img/4.jpg);
@@ -26,12 +26,17 @@
         #fullpage .section:nth-child(5){
             background-image: url(./img/5.jpg);
         }
+        #fullpage .section:nth-child(6){
+            background-image: url(./img/7.jpg);
+        }
         #headout{
             //
         }
         #head{
             width:12vh;
-
+        }
+        .headtext{
+            text-shadow: 2px 2px 4px #000000;
         }
     </style>
 </head>
@@ -40,10 +45,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.22/fullpage.min.js" integrity="sha512-yHHLi2ZwgtW9QNVZd0asqMyWGJ6Kx73ijKlGWSi3MwYFB5ZzOJV8wPtopKr6muHk5SERgF3OB/2dZj3StlI34w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <div id="fullpage">
-        <div class="section">
-            <div class="headout col-sm-3 mx-auto col-xl-2 offset-xl-5">
+        <div id="playButton" class="section">
+            <div  class="headout col-sm-3 mx-auto col-xl-2 offset-xl-5">
                 <img id="head" src="img/head.jpg" class="rounded-circle img-thumbnail rounded mx-auto d-block img-fluid" alt="">
-                <h1 class="text-center">点击进入</h1>
+                <h1 class="headtext text-light text-center d-block mx-auto">点击进入</h1>
+                <audio id="audioPlayer" src="video/天气之子幻.mp3"></audio>
             </div>
         </div>
         <div class="section"><h1>祝</h1></div>
@@ -54,8 +60,41 @@
     </div>
     <script>
         $(function() {
-            $('#fullpage').fullpage();
+            $('#fullpage').fullpage({// fullPage.js的配置选项...
+            afterLoad: function(anchorLink, index) {
+            // 在每次滚动到新的页面时检查音乐状态
+                checkMusicStatus();
+            },
+            onLeave: function(index, nextIndex, direction) {
+                // 当页面滚动离开时也检查音乐状态
+                checkMusicStatus();
+            }
         });
+            // 监听按钮点击事件
+            $('#playButton').click(function() {
+                // 检查音频是否正在播放，如果是则暂停，否则播放音乐
+                if ($('#audioPlayer')[0].paused) {
+                    $('#audioPlayer')[0].play(); // 播放音乐
+                    // $(this).text('暂停音乐'); // 更新按钮文本
+                } else {
+                    // $('#audioPlayer')[0].pause(); // 暂停音乐
+                    // $(this).text('播放音乐'); // 更新按钮文本
+                }
+            });
+            $('.section').click(function(){
+                $.fn.fullpage.moveSectionDown();
+            })
+        });
+
+        function checkMusicStatus() {
+        // 获取音频元素
+        var audioPlayer = document.getElementById('audioPlayer');
+        
+        // 如果音乐正在播放，则不做任何操作；如果音乐暂停了，则继续播放
+        if (audioPlayer.paused) {
+            audioPlayer.play();
+        }
+    }
     </script>
 </body>
 </html>
