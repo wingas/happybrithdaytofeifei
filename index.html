@@ -183,6 +183,17 @@
             $('#fullpage .section:nth-child(9)').click(function(){
                 $.fn.fullpage.silentMoveTo(1,1);
             });
+            WebFont.load({
+                custom: {
+                    families: ['cute', 'cool', '宋体','sans-serif'], // 列出所有要加载的字体名称
+                },
+                classes: false,
+                active() {
+                // 应用字体到页面上
+                document.body.style.fontFamily = 'cute, cool, 宋体, sans-serif';
+                // 根据需要调整字体的优先级顺序，以及是否提供后备字体
+                },
+            });
         });
 
         function checkMusicStatus() {
